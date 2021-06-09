@@ -1,0 +1,54 @@
+.containerCounter {
+   display: flex;
+   flex: 1;
+   justify-content: center;
+   align-items: center;
+
+   flex-wrap: wrap;
+   flex-direction: column;
+}
+
+.counterBox {
+   background-color: #262727;
+
+   height: 300px;
+   width: 500px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 2rem;
+
+   h1 {
+      font-size: 6rem;
+      letter-spacing: 0.3rem;
+   }
+}
+
+.containerButtons {
+   margin: 4rem 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   button {
+      margin: 0 1.5rem;
+   }
+}
+
+div.currentSession {
+   margin-top: 1.5rem;
+
+   span {
+      background-color: #0ddb66;
+      color: var(--text);
+
+      padding: 0.4rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 1rem;
+
+      text-transform: uppercase;
+   }
+}

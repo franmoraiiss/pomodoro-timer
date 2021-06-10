@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Dashboard } from '../components/Dashboard'
+import { CountdownProvider } from '../contexts/CountdownContext'
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
       </Head>
 
       <main>       
-        <Dashboard />
+        <CountdownProvider>
+          <Dashboard />
+        </CountdownProvider>
       </main>
     </>
   )

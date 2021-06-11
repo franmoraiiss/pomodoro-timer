@@ -1,5 +1,5 @@
 .button {
-   width: 8rem;
+   width: 10rem;
    height: 3rem;
    padding: 0 1.5rem;
 
@@ -16,6 +16,10 @@
 
    transition: filter 0.2s;
    &:hover {
-      filter: brightness(0.8);
+      filter: brightness(0.7);
+   }
+
+   &:active {
+      filter: brightness(0.3);
    }
 }

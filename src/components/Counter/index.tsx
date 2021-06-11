@@ -10,6 +10,7 @@ export function Counter() {
       seconds,
       isActive,
       isBreak,
+      countSession,
 
       startCountdown,
       resetCountdown,
@@ -49,7 +50,8 @@ export function Counter() {
             }                        
          </div>
 
-         <div className={styles.sessionInfo}>{ !isBreak ? (<p>Time to focus!</p>) : (<p>Break time!</p>) }</div>
+         <div className={styles.sessionInfo}>
+            <p>{ !isBreak ? ("Time to focus!") : ("Break time!") } | Session: {countSession}</p></div>
 
          <div className={styles.containerActionButtons}>
 
@@ -60,7 +62,7 @@ export function Counter() {
                )
             }            
             <Button text="Stop" onClick={stopCountdown}/>
-            <Button text="Reset" onClick={resetCountdown}/>         
+            <Button text="Reset Pomodoro" onClick={resetCountdown}/>         
          </div>         
 
          { !isActive ? (

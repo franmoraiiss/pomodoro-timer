@@ -6,6 +6,9 @@ export function Dashboard() {
       <div className={styles.container}>
          <h1 className={styles.title}>Pomodoro Timer</h1>
          <Counter />
+         <div className={styles.footer}>
+            <p>Made by Francisco Morais</p>
+         </div>
       </div>
    )
 }

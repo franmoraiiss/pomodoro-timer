@@ -100,8 +100,13 @@
       letter-spacing: 2px;
 
       transition: filter 0.2s;
+
       &:hover {
-         filter: brightness(0.8);
+         filter: brightness(0.7);
+      }
+
+      &:active {
+         filter: brightness(0.3);
       }
    }
 }

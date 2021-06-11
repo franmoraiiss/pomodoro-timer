@@ -3,9 +3,12 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 interface CountdownContextData {
    minutes: number;
    seconds: number;
+
    hasFinished: boolean;
    isActive: boolean;
    isBreak: boolean;
+
+   countSession: number;
 
    startCountdown: () => void;
    resetCountdown: () => void;
@@ -28,11 +31,12 @@ export const CountdownContext = createContext({} as CountdownContextData);
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
 
-   const [time, setTime] = useState(0.05 * 60);
+   const [time, setTime] = useState(25 * 60);
    const [isActive, setIsActive] = useState(false);
    const [hasFinished, setHasFinished] = useState(false);
 
    const [session, setSession] = useState(1);
+   const [countSession, setCountSession] = useState(1);
    const [isBreak, setIsBreak] = useState(false);
 
    const minutes = Math.floor(time / 60);
@@ -55,8 +59,11 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
    function resetCountdown() {
       clearTimeout(countdownTimeout);
-      setIsActive(false);
       setTime(25 * 60);
+      setSession(1);
+      setCountSession(1);
+      setIsActive(false);
+      setIsBreak(false);
       setHasFinished(false);
    }
 
@@ -81,12 +88,12 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
    }
 
    function startShortBreak() {
-      setTime(0.1 * 60);
+      setTime(5 * 60);
       setIsBreak(true);
    }
 
    function startLongBreak() {
-      setTime(0.2 * 60);
+      setTime(10 * 60);
       setIsBreak(true);
    }
 
@@ -122,8 +129,10 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
          if(isBreak) {
             if(session == 4) {
                setSession(1);
+               setCountSession(countSession + 1);                        
             } else {
-               setSession(session + 1);                        
+               setSession(session + 1);
+               setCountSession(countSession + 1);                        
             }
          }
 
@@ -137,7 +146,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
          }         
 
          if(isBreak && time == 0) {
-            setTime(0.05 * 60);
+            setTime(25 * 60);
             setIsBreak(false);
          }
       }
@@ -151,6 +160,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
          hasFinished,
          isActive,
          isBreak,
+         countSession,
 
          startCountdown,
          resetCountdown,

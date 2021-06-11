@@ -37,8 +37,6 @@
 $ git clone https://github.com/franmoraiiss/pomodoro-timer.git && cd pomodoro-timer
 ```
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 First, install the necessary dependencies by running:
 
 ```bash
@@ -92,8 +90,6 @@ $ git push origin my-feature
 
 After your pull request is merged, you can delete your branch
 
----
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -102,6 +98,8 @@ To learn more about Next.js, take a look at the following resources:
 -  [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+---
 
 ✍️ **Authors**
 

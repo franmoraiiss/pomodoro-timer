@@ -24,6 +24,9 @@
   <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
+<p align="center">
+  <img src="./screenshot.gif">
+</p>
 ## 👨🏻‍💻 About the project
 
 -  <p style="color: black;">The pomodoro technique is used to improve focus and productivity by dividing work into focus sessions and breaks. 

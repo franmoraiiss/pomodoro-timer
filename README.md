@@ -27,6 +27,7 @@
 <p align="center">
   <img src="./screenshot.gif">
 </p>
+
 ## 👨🏻‍💻 About the project
 
 -  <p style="color: black;">The pomodoro technique is used to improve focus and productivity by dividing work into focus sessions and breaks. 

@@ -9,6 +9,7 @@ export function Counter() {
       minutes,
       seconds,
       isActive,
+      isBreak,
 
       startCountdown,
       resetCountdown,
@@ -24,17 +25,34 @@ export function Counter() {
    const [minutesAboveHundred, minuteLeft, minuteRight] = String(minutes).padStart(3, '0').split('');
    const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
+   function styleCounterBox() {      
+      if(isActive) {      
+         if(isBreak == true) {
+            return styles.counterBoxBreak;
+         } else {
+            return styles.counterBoxActive;
+         }         
+      } else {
+         return styles.counterBox;
+      }
+   }
+
    return (
       <>
          <div className={styles.containerCounter}>
-            <div className={isActive ? styles.counterBoxActive : styles.counterBox }>
-               <h1>
-                  {Number(minutesAboveHundred) >= 1 ? minutesAboveHundred : ""}{minuteLeft}{minuteRight}:{secondLeft}{secondRight}
-               </h1>
-            </div>            
+            {               
+               <div className={styleCounterBox()}>
+                  <h1>
+                     {Number(minutesAboveHundred) >= 1 ? minutesAboveHundred : ""}{minuteLeft}{minuteRight}:{secondLeft}{secondRight}
+                  </h1>
+               </div>
+            }                        
          </div>
 
+         <div className={styles.sessionInfo}>{ !isBreak ? (<p>Time to focus!</p>) : (<p>Break time!</p>) }</div>
+
          <div className={styles.containerActionButtons}>
+
             { !isActive ? (
                   <Button text="Start" onClick={startCountdown}/>
                ) : (
@@ -43,7 +61,7 @@ export function Counter() {
             }            
             <Button text="Stop" onClick={stopCountdown}/>
             <Button text="Reset" onClick={resetCountdown}/>         
-         </div>
+         </div>         
 
          { !isActive ? (
                <div>

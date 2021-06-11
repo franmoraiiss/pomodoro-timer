@@ -48,12 +48,32 @@
    transition: 0.4s;
 }
 
-.containerActionButtons {
-   margin: 1rem 0;
+.counterBoxBreak {
+   background-color: var(--counterBoxBreak);
 
+   height: 290px;
+   width: 500px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 1rem;
+
+   h1 {
+      font-size: 7rem;
+      letter-spacing: 0.3rem;
+   }
+
+   transition: 0.4s;
+}
+
+.containerActionButtons {
    display: flex;
    justify-content: center;
    align-items: center;
+
+   margin-bottom: 1.5rem;
 
    button {
       margin: 1rem 1.5rem;
@@ -89,7 +109,6 @@
 .changeTime {
    text-align: center;
    letter-spacing: 2px;
-   margin-top: 2.5rem;
    margin-bottom: 1rem;
 }
 
@@ -103,4 +122,11 @@
          filter: brightness(1);
       }
    }
+}
+
+.sessionInfo {
+   margin-top: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
